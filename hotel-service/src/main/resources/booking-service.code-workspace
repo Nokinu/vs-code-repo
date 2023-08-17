@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "../../../../booking-service"
+		},
+		{
+			"path": "../../../../customer-service"
+		},
+		{
+			"path": "../../.."
+		}
+	],
+	"settings": {
+		"java.compile.nullAnalysis.mode": "automatic",
+		"java.configuration.updateBuildConfiguration": "automatic"
+	}
+}
