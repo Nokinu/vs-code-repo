@@ -1,0 +1,80 @@
+spring:
+  config:
+    activate:
+      on-profile: dev
+  application:
+    name: bookings
+  datasource:
+    url: jdbc:oracle:thin:@vsdb_high?TNS_ADMIN=${HOME}/Wallet_vsdb
+    username: <username>
+    password: <password>
+  jpa:
+    database: oracle
+    show-sql: true
+    hibernate:
+      naming:
+        implicit-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.Oracle12cDialect
+server:
+  port: 8080
+  servlet:
+    context-path: /vs-bookings/api
+logging:
+  level:
+    com:
+      vs:
+        booking: DEBUG
+oci:
+  tenant:
+    config: oci
+    region: 
+    adb-username-ocid: 
+    adb-password-ocid: 
+    stream-ocid: 
+    message-endpoint: 
+    topic-ocid: 
+
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+  application:
+    name: bookings
+  datasource:
+    url: jdbc:oracle:thin:@vsdb_high?TNS_ADMIN=/Wallet_vsdb
+    username: ADMIN
+    password: No1canbeatme
+  jpa:
+    database: oracle
+    show-sql: true
+    hibernate:
+      naming:
+        implicit-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.Oracle12cDialect
+server:
+  port: 8080
+  servlet:
+    context-path: /vs-bookings/api
+logging:
+  level:
+    com:
+      vs:
+        booking: DEBUG
+oci:
+  tenant:
+    config: oci
+    region: 
+    adb-username-ocid: 
+    adb-password-ocid: 
+    stream-ocid: 
+    message-endpoint: 
+    topic-ocid: 
+
